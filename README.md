@@ -1,4 +1,4 @@
-# 🚀 Flask Vision Board - Jenkins & Ansible CI/CD Pipeline
+# 🚀 Flask Vision Board - Git Action & Ansible CI/CD Pipeline
 
 אפליקציית פלאסק (Flask) מעוצבת, צבעונית ואינטראקטיבית המציגה לוח חזון ומסרים חיוביים על מחשבה יוצרת מציאות. 
 פרויקט זה מדגים תהליך אוטומציה ו-CI/CD מלא (End-to-End) המשלב את **Jenkins** לבנייה ודחיפה של אימג' דוקר, ו-**Ansible** לפריסה אוטומטית (Deployment) מהירה בשרת היעד.
