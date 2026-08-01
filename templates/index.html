@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחשבה יוצרת מציאות | לוח החזון שלך</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #e8c5e5, #b9fbc0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #4a0e4e;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #6d597a;
+            font-weight: bold;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #b5179e;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #4a4e69;
+        }
+
+        /* צבעים ייחודיים לכרטיסים */
+        .card-1 h2 { color: #f72585; }
+        .card-2 h2 { color: #7209b7; }
+        .card-3 h2 { color: #3f37c9; }
+        .card-4 h2 { color: #4cc9f0; }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6d597a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>הכוח ליצור מציאות ✨</h1>
+        <p class="subtitle">מה שאתה מדמיין, אתה יכול להשיג. מה שאתה מרגיש, אתה מושך אליך.</p>
+    </header>
+
+    <main class="container">
+        <!-- כרטיס 1 -->
+        <div class="card card-1">
+            <span class="icon">🧠</span>
+            <h2>מחשבה יוצרת מציאות</h2>
+            <p>התודעה שלך היא המגנט החזק ביותר ביקום. כאשר אתה מתמקד בטוב, בשפע ובהצלחה, המציאות סביבך מתחילה להשתנות כדי להתאים לתדר שלך.</p>
+        </div>
+
+        <!-- כרטיס 2 -->
+        <div class="card card-2">
+            <span class="icon">🎯</span>
+            <h2>כוחו של לוח החזון</h2>
+            <p>לוח חזון הוא לא סתם תמונות על קיר – הוא מפת הדרכים של התת-מודע שלך. כשאתה רואה את המטרות שלך כל גוף, המוח פועל להגשמתן.</p>
+        </div>
+
+        <!-- כרטיס 3 -->
+        <div class="card card-3">
+            <span class="icon">🌱</span>
+            <h2>הצהרות חיוביות</h2>
+            <p>דבר אל עצמך באהבה ובאמונה. מילים הן זרעים. שנה את הסיפור שאתה מספר לעצמך, ותשנה את מסלול חייך לחלוטין.</p>
+        </div>
+
+        <!-- כרטיס 4 -->
+        <div class="card card-4">
+            <span class="icon">🚀</span>
+            <h2>פעולה מתוך השראה</h2>
+            <p>החזון נותן לך את הכיוון, והאמונה נותנת לך את הדלק. צעד היום צעד אחד קטן, מלא ביטחון, לעבר החיים שאתה ראוי להם.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>נבנה באנרגיה טובה | תאמין, תראה, תגשים 💫</p>
+    </footer>
+
+</body>
+</html>
