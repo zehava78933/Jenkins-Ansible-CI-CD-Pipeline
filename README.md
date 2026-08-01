@@ -15,7 +15,7 @@
 ├── inventory.ini            # הגדרת שרתי היעד עבור אנסיבל (Localhost)
 ├── deploy-playbook.yml      # קובץ הפקודות והמודולים של אנסיבל לפריסה
 └── templates/
-    └── 1EX.html             # דף ה-HTML הצבעוני והמעוצב
+    └── index.html             # דף ה-HTML הצבעוני והמעוצב
 ```
 
 ---
