@@ -1,7 +1,7 @@
 ---
 - name: Deploy Flask Vision Board Application
-  hosts: webservers
-  become: true
+  hosts: all                     # 1. שונה מ-webservers ל-all (או localhost)
+  become: false                  # 2. שונה מ-true ל-false (לא צריך sudo ב-GitHub Actions)
 
   vars:
     docker_hub_user: "zehavab"
@@ -10,19 +10,19 @@
 
   tasks:
     - name: Remove existing container if it exists
-      docker_container:
+      community.docker.docker_container: # 3. שימוש בשם המודול המלא
         name: "{{ container_name }}"
         state: absent
       ignore_errors: true
 
     - name: Pull latest image from DockerHub
-      docker_image:
+      community.docker.docker_image:     # 3. שימוש בשם המודול המלא
         name: "{{ docker_hub_user }}/{{ image_name }}:latest"
         source: pull
         force_source: true
 
     - name: Run the new Flask container
-      docker_container:
+      community.docker.docker_container: # 3. שימוש בשם המודול המלא
         name: "{{ container_name }}"
         image: "{{ docker_hub_user }}/{{ image_name }}:latest"
         state: started
