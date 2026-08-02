@@ -1,1 +1,46 @@
+name: Flask Vision Board CI/CD - Mission 1
+
+# 1. הטריגר: מתי הצינור מתחיל לרוץ אוטומטית?
+on:
+  push:
+    branches: [ "main" ] # רץ בכל פעם שאת עושה Push לענף הזה
+
+jobs:
+  build-and-deploy:
+    # 2. איפה הכל רץ? על שרת אובונטו זמני ונקי שגיטהאב מקצה לנו בחינם
+    runs-on: ubuntu-latest
+
+    steps:
+    # שלב א': משיכת קוד המקור והאנסיבל מה-Git לתוך השרת הזמני (בדומה ל-SCM בג'נקינס)
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # שלב ב': התחברות מאובטחת ל-DockerHub עם ה-Secrets שהגדרת בכספת של גיטהאב
+    - name: Log in to DockerHub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    # שלב ג': בניית האימג' מדוקרפייל ודחיפתו לחשבון ה-DockerHub שלך (שלבים 1+2 בג'נקינס)
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: |
+          ${{ secrets.DOCKERHUB_USERNAME }}/flask-vision-board:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/flask-vision-board:${{ github.run_number }}
+
+    # שלב ד': התקנת Ansible ורכיב הדוקר שלו על השרת הזמני (כדי שיוכל להריץ את הפלייבוק)
+    - name: Install Ansible and Python dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y ansible
+        pip install docker
+
+    # שלב ה': הרצת קובץ האנסיבל שלך לפריסת האפליקציה בפורט 5000 הקבוע (שלב 3 בג'נקינס)
+    - name: Run Ansible Playbook
+      run: |
+        ansible-playbook -i inventory.ini deploy-playbook.yml
 
